@@ -8,7 +8,7 @@
 
 int main()
 {
-  int num,i,multiplica;
+  int num,i;
 
   printf("Calcular a tabuada de qual numero: ");
   scanf("%d", &num);
@@ -16,9 +16,9 @@ int main()
 
   i=1;
   while(i<=10){
-  multiplica = num * i;
-  printf("%d X %d = %d \n", num,i,multiplica);
+  printf("%d X %d = %d \n", num,i,num*i);
   i++;
+  // i+=1
   }
   // comentários
   // mais comentários
