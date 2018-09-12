@@ -11,8 +11,7 @@ int main(){
 
   fflush(stdin); // limpa buffer de memória
 
-  //chn = getchar();
-  scanf("%c", &cnh); // para rodar no GCC
+  cnh = getchar(); //rodou normal no gcc-termux
     
     if(cnh == 'A'){
         printf("Motocicleta");
