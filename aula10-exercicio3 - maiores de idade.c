@@ -9,20 +9,14 @@ depois o programa deve informar quantas pessoas são maiores de idade.
 
 int main(){
     
-    int idades[10];
-    
-    printf("Digite 10 idades:\n");
-	
-	for (int i=0;i<10;i++){
-		scanf("%d",&idades[i]);
-	}
-
+    int idade;
     int maior = 0;
-    int i = 0;
-    
-    while(i < 10){
+    int i = 1;    
+    while(i <= 10){
+        printf("Digite a %dª idade:\n", i);
+        scanf("%d",&idade);
         
-        if (idades[i] >= 18){
+        if (idade >= 18){
             maior++;
         }
         i++;
