@@ -13,20 +13,20 @@ int main(){
     int marios=0;
     int i=0;
     
-    printf("Digite 10 nomes para verificação: \n");
-    
     while(i<10){
+        
+        printf("Digite o %d nome de aluno: \n", i+1);
         fflush(stdin);
         
         gets(nome);
         
-        if(strcmp(nome,"mario")==0){
+        if(strcmp(nome,"mario")==0){  // strcmpi() // ignora case-sensitive não funcionou no gcc do termux
             marios++;
         }
         i++;
     }
     
-    printf("Foram digitados %d alunos com nome mario. \n", marios);
+    printf("Foram digitados %d aluno(s) com nome mario. \n", marios);
 
 }
 
