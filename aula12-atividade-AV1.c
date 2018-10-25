@@ -12,7 +12,7 @@ int main(){
     int flamingos, cavalos, cabecas, patas;
     
     printf("\n \t\t Contando quantos animais de cada especie existe em um cercado. \n\n");
-    printf(" Considere - Flamingos (2 patas) \t Cavalos (4 patas) \n\n ");
+    printf("\tConsidere: \n\tFlamingos (2 patas) \n\tCavalos (4 patas) \n\n ");
     printf("\t Considerando que não há somente uma espécie no cercado. Pelo menos 1 flamingo e 1 cavalo \n");
     
     printf("Digite abaixo a quantidade de cabecas e patas:");
@@ -22,18 +22,21 @@ int main(){
     printf("\n Qual o numero total de patas: ");
     scanf("%d", &patas);
     
-    cavalos = (patas-(2*cabecas))/2;
-    flamingos = cabecas - cavalos;
-	
-    if(cabecas > patas || patas < cabecas || cavalos <= 0 || flamingos <= 0){ // restricoes
+    int x,y;
+    x = cabecas*4;    // considerar todos animais 4 patas
+    y = x - patas;    // subtrair as patas fornecidas
+    flamingos = y/2;  // flamingo usa metade das patas 
+    cavalos = cabecas - flamingos;  // cavalos usam cabeças restantes
+    
+    if(cabecas > patas || patas < cabecas || cavalos < 0 || flamingos < 0){ // restricoes
 	    printf("\nNao eh possivel!\n ");
-	    printf("\n- O numero de cabecas deve ser menor que o de patas!\n ");
-	    printf("\n- O numero de patas deve ser maior do que o de cabecas!\n ");
+	    printf("\n- O numero de cabecas deve ser menor que o de patas!");
+	    printf("\n- O numero de patas deve ser maior do que o de cabecas!\n");
     }
 	
     else{
-	    printf("\nResultado: \n ");
-	    printf("O numero de cavalos: %d \nO numero de flamingos: %d\n", cavalos, flamingos);
+	    printf("\nResultado:");
+	    printf("\nO numero de cavalos: %d \nO numero de flamingos: %d\n", cavalos, flamingos);
     }
   
     return 0;
