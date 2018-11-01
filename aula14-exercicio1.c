@@ -7,25 +7,24 @@
  * solução
 */
 
-
-int plus(int x,int y){
-	return(x+y);
+void plus(int x,int y){
+	printf("Soma: %d\n",x+y);
 }
-int minus(int x,int y){
-	return(x-y);
+void minus(int x,int y){
+	printf("Subtracao: %d\n",x-y);
 }
-int times(int x,int y){
-	return(x*y);
+void times(int x,int y){
+	printf("Multiplicacao: %d\n",x*y);
 }
-float over(int x,int y){
-	return(x/y);
+void over(int x,int y){
+    float a;
+    a = x/y;
+	printf("Divisao: %.2f \n",a);
 }
 	
 int main(){
 	// inicio 
 	int num1,num2,num3,num4;
-	int soma,subt,mult;
-	float div;
 
 	// entrada de dados
 	printf("Digite um numero: ");
@@ -38,18 +37,10 @@ int main(){
 	scanf("%d", &num4);
 
 	// Operacoes (processamento)
-	soma = plus(num1,num3);
-	subt = minus(num2,num4);
-	mult = times(num1, num4);
-	div = over(num3, num4);
-
-	// resultados 
-
-	printf("\nResultados:\n");
-	printf("soma: %d\n", soma);
-	printf("subtracao: %d\n", subt);
-	printf("multiplicacao: %d\n", mult);
-	printf("divisao: %.2f\n", div);
+	plus(num1,num3);
+	minus(num2,num4);
+	times(num1, num4);
+	over(num3, num4);
 
 	return(0); // main() definida para retornar um inteiro
 }
