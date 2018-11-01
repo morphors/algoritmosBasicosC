@@ -1,46 +1,56 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /*
  * Melhore e modularize o programa incompleto a seguir
  *
+ * Solução
 */
+
+void Local(int x,float y); // prototipo
 
 int main(){
     
-    int Origem;
-    float Preco;
+    // define variaveis 
+    int origem;
+    float preco;
     
+    // solicita entrada de dados
     printf("\n Qual o código de origem: ");
-    scanf("%d", &Origem);
+    scanf("%d", &origem);
     printf("\n Qual o preço do produto: ");
-    scanf("%f", &Preco);
+    scanf("%f", &preco);
     
-    switch(Origem){
-        case 1:
-            printf("\n %f Produto do Sul", Preco);
-            break;
-        case 2:
-            printf("\n %f Produto do Norte", Preco);
-            break;
-        case 3:
-            printf("\n %f Produto do Leste", Preco);
-            break;
-        case 4:
-            printf("\n %f Produto do Oeste", Preco);
-            break;
-        case 5:
-            printf("\n %f Produto do Sudeste", Preco);
-            break;
-        case 6:
-            printf("\n %f Produto do Centro-Oeste", Preco);
-            break;
-        case 7:
-            printf("\n %f Produto do Nordeste", Preco);
-            break;
-        default:
-            printf("\n %f Produto importado", Preco);
-            break;
-    }
+    // executa função 
+    Local(origem,preco);
+    
     return 0;
+}
+
+
+// função
+void Local(int x,float y)
+{
+    // define variavel 
+    char regiao[15]; 
+    float valor = y;
+    
+    // conforme caso, define valor da região 
+    
+    // não tem como definir valor para a string diretamente
+    // Ex: regiao = "Sul"  -->  é necessário o uso da função strcpy() de string.h
+    
+    if(x==1){ strcpy(regiao,"Sul");} 
+    else if(x==2){ strcpy(regiao,"Norte");}
+    else if(x==3){ strcpy(regiao,"Leste");}
+    else if(x==4){ strcpy(regiao,"Oeste");}
+    else if(x==5){ strcpy(regiao,"Sudeste");}
+    else if(x==6){ strcpy(regiao,"Centro-Oeste");}
+    else if(x==7){ strcpy(regiao,"Nordeste");}
+    else {strcpy(regiao,"Importado");}
+    
+    printf("\nValor e região do produto");
+    printf("\n %.2f Produto do %s \n", valor, regiao);
+    
 }
