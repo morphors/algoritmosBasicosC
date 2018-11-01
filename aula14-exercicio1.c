@@ -4,8 +4,23 @@
 /*
  * modularize o programa a seguir
  *
+ * solução
 */
 
+
+int plus(int x,int y){
+	return(x+y);
+}
+int minus(int x,int y){
+	return(x-y);
+}
+int times(int x,int y){
+	return(x*y);
+}
+float over(int x,int y){
+	return(x/y);
+}
+	
 int main(){
 	// inicio 
 	int num1,num2,num3,num4;
@@ -23,10 +38,10 @@ int main(){
 	scanf("%d", &num4);
 
 	// Operacoes (processamento)
-	soma = num1 + num3;
-	subt = num2 - num4;
-	mult = num1 * num4;
-	div = num3 / num4;
+	soma = plus(num1,num3);
+	subt = minus(num2,num4);
+	mult = times(num1, num4);
+	div = over(num3, num4);
 
 	// resultados 
 
@@ -35,5 +50,7 @@ int main(){
 	printf("subtracao: %d\n", subt);
 	printf("multiplicacao: %d\n", mult);
 	printf("divisao: %.2f\n", div);
+
+	return(0); // main() definida para retornar um inteiro
 }
 
