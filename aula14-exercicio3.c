@@ -9,7 +9,7 @@
 */
 
 float calcula(int x, int y, int z){
-    return (x*x)+(y+z);
+    return (x*x)+(y+z); // pode ser usado pow(x,2)
 }
 
 int main(){
