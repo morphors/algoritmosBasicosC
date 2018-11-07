@@ -11,7 +11,7 @@
  * solicita entrada de char, caso variavel pertença a valor da matriz retorna tipo 
  * 
  * 
- * primeira solução
+ * Solução melhorada
 */
 
 void tipo(char x){
@@ -19,28 +19,45 @@ void tipo(char x){
 	char vogais[] = {'A', 'E', 'I', 'O', 'U','a','e','i','o','u'};
 	int find = 0;
 
-	for(int i=0; i<10;i++){ 
-		if(x==vogais[i]){
-			printf("\nO caractere [ %c ] é uma vogal.\n", x);
-			find = 1;
-			break;
-		}
 
-		else if(decimal==32){
-			printf("\nO caractere [ %c ] é um espaço.\n", x);
-			find = 1;
-			break;
-		}
+	// Testa se é um espaco
+	if(decimal==32)
+	{
+		printf("\nO caractere [ %c ] é um espaço.\n", x);
+		find = 1;
+	}
 
-		else if( (decimal > 65 && decimal < 90) || (decimal > 97 && decimal < 122) ){
+	// verifica se faz parte do alfabeto
+	else if( (decimal > 65 && decimal < 90) || (decimal > 97 && decimal < 122) )
+	{
+
+		// loop para testar as vogais 
+		for(int i=0; i<10;i++)
+		{ 
+			// testando as vogais 
+			// printf("comparando %c com %c \n", x, vogais[i]);
+			if(x==vogais[i])
+			{
+				printf("\nO caractere [ %c ] é uma vogal.\n", x);
+				find = 1;
+				break;
+			}
+
+		}
+		
+		// faz parte do alfabeto, mais não foi encontrado nas vogais
+		if( find==0 )
+		{
 			printf("\nO caractere [ %c ] é uma consoante.\n", x);
 			find = 1;
-			break;
 		}
-
 	}
-	if(find==0){
-		printf("O caractere [ %c ] Não pertence ao alfabeto.\n", x);
+
+
+	// não faz parte do alfabeto e não é espaço
+	else if(find==0)
+	{
+		printf("\nO caractere [ %c ] Não pertence ao alfabeto.\n", x);
 	}
 
 }
