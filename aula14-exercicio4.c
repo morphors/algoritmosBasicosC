@@ -19,7 +19,6 @@ void tipo(char x){
 	char vogais[] = {'A', 'E', 'I', 'O', 'U','a','e','i','o','u'};
 	int find = 0;
 
-
 	// Testa se é um espaco
 	if(decimal==32)
 	{
@@ -28,7 +27,7 @@ void tipo(char x){
 	}
 
 	// verifica se faz parte do alfabeto
-	else if( (decimal > 65 && decimal < 90) || (decimal > 97 && decimal < 122) )
+	else if( (decimal >= 65 && decimal <= 90) || (decimal >= 97 && decimal <= 122) )
 	{
 
 		// loop para testar as vogais 
