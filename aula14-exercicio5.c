@@ -24,12 +24,12 @@ void tipo(char x){
 	// Testa se é um espaco
 	if(decimal==32)
 	{
-		printf("\nO caractere [ %c ] é um espaço.\n", x);
+		printf("O caractere [ %c ] é um ESPAÇO.\n", x);
 		find = 1;
 	}
 
 	// verifica se faz parte do alfabeto
-	else if( (decimal > 65 && decimal < 90) || (decimal > 97 && decimal < 122) )
+	else if( (decimal >= 65 && decimal <= 90) || (decimal >= 97 && decimal <= 122) )
 	{
 
 		// loop para testar as vogais 
@@ -39,7 +39,7 @@ void tipo(char x){
 			// printf("comparando %c com %c \n", x, vogais[i]);
 			if(x==vogais[i])
 			{
-				printf("\nO caractere [ %c ] é uma vogal.\n", x);
+				printf("O caractere [ %c ] é uma VOGAL.\n", x);
 				find = 1;
 				break;
 			}
@@ -49,7 +49,7 @@ void tipo(char x){
 		// faz parte do alfabeto, mais não foi encontrado nas vogais
 		if( find==0 )
 		{
-			printf("\nO caractere [ %c ] é uma consoante.\n", x);
+			printf("O caractere [ %c ] é uma CONSOANTE.\n", x);
 			find = 1;
 		}
 	}
@@ -58,28 +58,30 @@ void tipo(char x){
 	// não faz parte do alfabeto e não é espaço
 	else if(find==0)
 	{
-		printf("\nO caractere [ %c ] Não pertence ao alfabeto.\n", x);
+		printf("O caractere [ %c ] Não pertence ao ALFABETO.\n", x);
 	}
 
 }
 
 int main(){
 	// inicio 
-	char entrada[20];
+	char entrada[100];
 
 	int i=0;
 
 	// entrada de dados
 	printf("Digite uma letra: ");
-	scanf("%c", &entrada);
 
+	scanf("%[^\n]s", &entrada);
 
-	printf("%s \n", entrada);
+	//printf("%s \n", entrada);
 
-/*	while(entrada[i]!='\0'){
+	while(entrada[i]!='\0'){
+		//printf("", entrada[i]);
 		tipo(entrada[i]);
+		++i;
 	}
-*/	
+
 	return(0); 
 }
 
