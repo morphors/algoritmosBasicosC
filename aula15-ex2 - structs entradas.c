@@ -12,13 +12,20 @@ struct cadastro {
 int main(){
 	struct cadastro c;
 
-	printf
-	strcpy(c.nome, "João"); // usa-se a função para atribuir dado
-	c.idade = 20;
-	strcpy(c.rua, "Av. João dias");
-	c.numero = 200;
+	printf("Digite o nome:");
+	scanf("%[^\n]s", &c.nome);
 
-	printf("Nome: %s | Idade: %d | End.: %s , nº%d\n", c.nome, c.idade, c.rua, c.numero);
+	printf("Digite a idade:");
+	fflush(stdin);
+	scanf("%d", &c.idade);
+
+	printf("Digite a rua:");
+	fflush(stdin);
+	scanf("%[^\n]s", &c.rua);
+	
+	printf("Digite o numero:");
+	scanf("%d", &c.numero);
+	printf("\nNome: %s | Idade: %d | End.: %s , nº%d\n", c.nome, c.idade, c.rua, c.numero);
 
 	return(0);
 }
