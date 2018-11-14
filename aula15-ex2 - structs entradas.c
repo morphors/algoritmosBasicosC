@@ -5,7 +5,7 @@
 struct cadastro {
 	char nome[50];
 	int idade;
-	char rua[50];
+	char *rua;
 	int numero;
 };
 
@@ -21,6 +21,8 @@ int main(){
 
 	printf("Digite a rua:");
 	fflush(stdin);
+    fflush(stdout);    
+    gets(c.rua);
 	scanf("%[^\n]s", &c.rua);
 	
 	printf("Digite o numero:");
