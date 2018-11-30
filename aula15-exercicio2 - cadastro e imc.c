@@ -4,25 +4,35 @@
 
 /*
 
-Estruturas aninhadas
+    Desenvolva um programa que cadastre 
+    o nome, a altura, o peso, o CPF e o sexo (M/F)
+    de uma pessoa.
+    
+    Antes do cadastro pergunte ao usuario quantos registros ele deseja realizar.
+    
+    com os dados cadastrados, em localize uma das pessoas por meio do CPF e imprima o seu IMC em tela.
+    
+    Calculo IMC = peso/(altura^2)
+    
 
 */
 
 
-// prototipos de funções 
-//void cadastrar();
-//void mostrar();
-//void alterar(int cadastro);
-
-struct agenda {
+struct Pessoa {
 	char nome[50];
-    char telefone[11];
+    char sexo; // M ou F
+    float peso;
+    float altura;
+    long cpf;
 };
 
 int main(){
     
-    int acesso = 1;
-    int opcao;
+    int i=0, j=0, temp=0, n_cadastrado=0;
+    long localiza_cpf;
+    float imc=0;
+    
+    struct Pessoa pessoas
 
 	struct agenda a[15];
     
